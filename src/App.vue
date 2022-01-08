@@ -7,7 +7,7 @@
         <ul style="list-style-type:none"> 
           <li v-for="(todo, i) in existingToDo">
             <span> {{ i + 1 }} : {{ todo.text}} </span>
-            <button class="delete-button" v-on:click="delete()"> X </button>
+            <button v-on:click="deleteToDo(i)" class="delete-button"> X </button>
           </li>
         </ul>
       
@@ -33,8 +33,8 @@ export default {
       this.existingToDo.push({ text: this.newToDo, id: new Date().valueOf() });
       this.newToDo = "";
     },
-    delete() {
-      this.existingToDo.splice(i);
+    deleteToDo(i) {
+      this.existingToDo.splice(i, 1);
     },
   },
 };
