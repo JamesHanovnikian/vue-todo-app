@@ -2,7 +2,7 @@
   <div id="app">
     
     <div class="container">
-      <h1> VUE TODO! </h1>
+      <Title /> 
       <div class="card" style="width: 75%;">
         <input placeholder="Add your task" class="input" v-model="newToDo "type="text" name="" id="">
         <div>
@@ -21,8 +21,13 @@
 </template>
 
 <script>
+import Title from "./components/Title.vue";
+
 export default {
   name: "app",
+  components: {
+    Title,
+  },
   data() {
     return {
       newToDo: "",
